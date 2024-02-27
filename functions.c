@@ -45,7 +45,7 @@ int isEmpty(Node** head) {
 }
 
 //удаление узла по значению
-void deleteByData(Node** head, int sampleData) { //done
+void deleteByData(Node** head, int sampleData) {
     Node* temp = *head;
     //Node* temp = *head, * prev;
 
@@ -77,7 +77,7 @@ void deleteByData(Node** head, int sampleData) { //done
     printf("\n");
 }
 
-void searchByData(Node** head, int sampleData) { //done
+void searchByData(Node** head, int sampleData) {
     Node* current = *head; //перебор с головы вниз
     int counter = 0;
     //подсчет количества вхождений заданного значения
@@ -95,7 +95,7 @@ void searchByData(Node** head, int sampleData) { //done
 void changeData(Node* target, int userValue, Node** head) {
     target->data = userValue;
 
-    printf("Измененная очередь: ");
+    printf("Обновленная очередь: ");
     Node* current = *head;
     while (current != NULL) {
         printf("%d ", current->data);
@@ -104,6 +104,7 @@ void changeData(Node* target, int userValue, Node** head) {
     printf("\n");
 }
 
+//выод очереди
 void printQueue(Node** head) {
     Node* current = *head;
     printf("Обновленная чередь:\n");
@@ -114,16 +115,16 @@ void printQueue(Node** head) {
     printf("\n");
 }
 
-Node* search(Node** head, int key) {
+//поиск узла по data
+Node* search(Node** head, int data) {
     Node* current = *head;
 
     while (current != NULL) {
-        if (current->data == key) {
+        if (current->data == data) {
             return current;
         }
         current = current->next;
     }
-
     return NULL;
 }
 
